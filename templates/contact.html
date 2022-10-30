@@ -1,0 +1,78 @@
+{% load static %}
+  <head>
+     
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,700,900&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="{% static 'contactform/fonts/icomoon/style.css' %}">
+     <link rel="stylesheet" href="{% static 'contactform/css/bootstrap.min.css' %}">
+     <link rel="stylesheet" href="{% static 'contactform/css/style.css' %}">
+     <title>Get In Touch</title>
+   </head>
+   <body>
+    <div id="large-header" class="large-header">
+      <canvas id="demo-canvas"></canvas>
+        
+      
+
+    <br>
+    <br>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-5 mr-auto">
+          <h3 class="mb-3">One Stop Solution</h3>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3768.3073308471608!2d72.9544535!3d19.1817745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7b9371e030533%3A0xfdf0b2b03f40908f!2sM.S%20COMPUTERS!5e0!3m2!1sen!2sin!4v1666693787483!5m2!1sen!2sin" width="525" height="610" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="col-md-6">
+          <div class="box">
+            <h3 class="heading">How Can We Help?</h3>
+            <h6>Call & Whatsapp: +91 7045 9224 86</h6> <br>
+            {% for msg in messages %} 
+            <div class="alert alert-success" role="alert">
+              {{ msg }}
+              
+            </div>  
+            {% endfor %}
+            <form class="mb-5" method="post" id="contactForm" name="contactForm">
+              {% csrf_token %} 
+              <div class="row">
+                <div class="col-md-6 form-group">
+                  <label for="name" class="col-form-label">Name *</label>
+                  <input type="text" class="form-control" name="name" id="name" placeholder="Your name" required>
+                </div>
+                <div class="col-md-6 form-group">
+                  <label for="name" class="col-form-label">Email</label>
+                  <input type="text" class="form-control" name="email" id="email" placeholder="Your Email Address" required>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 form-group">
+                  <label for="email" class="col-form-label">Phone *</label>
+                  <input type="text" class="form-control" name="subject" id="subject" placeholder="Contact No" required>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12 form-group">
+                  <label for="message" class="col-form-label">Message</label>
+                  <textarea class="form-control" name="message" id="message" placeholder="Don't Worry! I'am Here." cols="30" rows="7"></textarea>
+                </div>
+              </div>
+                  <input type="submit" value="Send Message" class="btn btn-block btn-primary rounded-0 py-2 px-4">
+                  <span class="submitting"></span>
+                  
+                </div>
+              </div>
+            </form>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+  <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+  <script src="{% static 'js/popper.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/jquery.validate.min.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+  </body>
+</html>
